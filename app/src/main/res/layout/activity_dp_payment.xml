@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DpPayment">
+
+    <TextView
+        android:id="@+id/namakonsumen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="Nama :"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/NoTelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="No. Telp :"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+       />
+
+
+    <TextView
+        android:id="@+id/textNama"
+        android:layout_width="252dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="120dp"
+        android:fontFamily="@font/poppins"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textnotelp"
+        android:layout_width="252dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="120dp"
+        android:fontFamily="@font/poppins"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="397dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="100dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_dp"
+            android:layout_width="397dp"
+            android:layout_height="158dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#FFFFFFFF"
+            tools:listitem="@layout/list_notatunai" />
+    </ScrollView>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="366dp"
+        android:layout_height="3dp"
+        android:background="@color/black"
+        android:layout_marginTop="260dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:id="@+id/bayardp"
+        android:layout_width="79dp"
+        android:layout_height="27dp"
+        android:fontFamily="@font/poppins"
+        android:text="Bayar :"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="30dp" />
+
+    <EditText
+        android:id="@+id/editbayar"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="280dp"
+        android:fontFamily="@font/poppins"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/sisadp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Sisa :"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="345dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/textsisa"
+        android:layout_width="206dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/poppins"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="345dp" />
+
+    <Button
+        android:id="@+id/hitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hitung"
+        android:layout_marginTop="410dp"
+        android:layout_centerHorizontal="true" />
+
+
+    <view
+        android:id="@+id/view"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="490dp"
+        android:background="@drawable/view_saatambil" />
+
+    <ImageButton
+        android:id="@+id/dpcetaknota"
+        android:layout_width="59dp"
+        android:layout_height="41dp"
+        android:backgroundTint="@color/babypink"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="490dp"
+        app:srcCompat="@drawable/ic_cetaknota" />
+
+    <ImageButton
+        android:id="@+id/dpkirimnotawa"
+        android:layout_width="59dp"
+        android:layout_height="41dp"
+        android:backgroundTint="@color/babypink"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="490dp"
+        app:srcCompat="@drawable/icon_whatsapp" />
+
+
+    <Button
+        android:id="@+id/dpbuttonHalamanutama"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:background="@drawable/button_pembayaran"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Halaman Utama"
+        android:textSize="20dp"
+        android:layout_marginTop="580dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

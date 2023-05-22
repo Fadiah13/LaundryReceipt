@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DetailLayanan">
+
+    <Button
+        android:id="@+id/buttonTambahLayanan"
+        android:layout_width="299dp"
+        android:layout_height="52dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins"
+        android:text="+ PAKET LAYANAN"
+        android:textSize="24sp"/>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="234dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pemesanan"
+            android:layout_width="377dp"
+            android:layout_height="464dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:background="#FFFFFFFF"
+            tools:listitem="@layout/list_data_pesanan" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/totalBayar"
+        android:layout_width="119dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="350dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Total Bayar"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/textTotalbayar"
+        android:layout_width="174dp"
+        android:layout_height="47dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/poppins"
+        android:inputType="number"
+        android:hint="RP"/>
+
+    <Button
+        android:id="@+id/buttonbayar"
+        android:layout_width="172dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="220dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins"
+        android:text="Bayar"
+        android:textSize="20sp"/>
+
+</RelativeLayout>

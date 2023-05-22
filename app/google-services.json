@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "887523453298",
+    "firebase_url": "https://laundryreceipt-d4eec-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "laundryreceipt-d4eec",
+    "storage_bucket": "laundryreceipt-d4eec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887523453298:android:90cadc8d512e4a6d3015eb",
+        "android_client_info": {
+          "package_name": "com.example.laundryreceipt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887523453298-2qssgm8u35j17h5j8k7snncava65m8ei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.laundryreceipt",
+            "certificate_hash": "da229cf2e6e907954c84e24393ca3b86bfcfb0b0"
+          }
+        },
+        {
+          "client_id": "887523453298-ol80j34c92uaiogcn45cl6hhokmkjua0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA08MnnM4wL9V0UBnTLGjubO3KzYNfBWFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887523453298-ol80j34c92uaiogcn45cl6hhokmkjua0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

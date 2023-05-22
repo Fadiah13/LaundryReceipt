@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Nota_tunai">
+
+    <TextView
+        android:id="@+id/namabank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="Nama :"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/norek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppins"
+        android:text="No. Telp :"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textnama"
+        android:layout_width="250dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="120dp"
+        android:fontFamily="@font/poppins"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textnotlp"
+        android:layout_width="250dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="120dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="397dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="100dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_notatunai"
+            android:layout_width="397dp"
+            android:layout_height="158dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#FFFFFFFF"
+            tools:listitem="@layout/list_notatunai" />
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/viewgaris"
+        android:layout_width="366dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="260dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/bayar"
+        android:layout_width="79dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="30dp"
+        android:fontFamily="@font/poppins"
+        android:text="Bayar :"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/editbayar"
+        android:layout_width="206dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="140dp"
+        android:fontFamily="@font/poppins"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/kembali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="345dp"
+        android:layout_marginLeft="30dp"
+        android:fontFamily="@font/poppins"
+        android:text="Kembali :"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textkembali"
+        android:layout_width="212dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="345dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/hitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:layout_centerHorizontal="true"
+        android:text="Hitung"/>
+
+    <view
+        android:id="@+id/view"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="490dp"
+        android:background="@drawable/view_saatambil" />
+
+    <ImageButton
+        android:id="@+id/tunaicetaknota"
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="490dp"
+        android:backgroundTint="@color/babypink"
+        app:srcCompat="@drawable/ic_cetaknota" />
+
+    <ImageButton
+        android:id="@+id/tunaikirimnotawa"
+        android:layout_width="67dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/babypink"
+        app:srcCompat="@drawable/icon_whatsapp" />
+
+    <Button
+        android:id="@+id/tunaibuttonHalamanutama"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:background="@drawable/button_pembayaran"
+        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginTop="580dp"
+        android:layout_centerHorizontal="true"
+        android:text="Halaman Utama"
+        android:textSize="20dp"/>
+
+</RelativeLayout>

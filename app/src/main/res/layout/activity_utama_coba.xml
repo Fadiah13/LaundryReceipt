@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".Utama">
+
+    <ImageView
+        android:id="@+id/iconProfil"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_account" />
+
+    <TextView
+        android:id="@+id/namaLaundry"
+        android:layout_width="173dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/iconProfil"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoLaundry"
+        android:layout_width="130dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/buttonPemesanan"
+        android:layout_width="129dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center_horizontal"
+        android:text="Pemesanan"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPelunasan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/namaLaundry" />
+
+    <ImageView
+        android:id="@+id/iconPemesanan"
+        android:layout_width="125dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="32dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPemesanan"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPemesanan"
+        app:layout_constraintStart_toStartOf="@+id/buttonPemesanan"
+        app:srcCompat="@drawable/pemesanan" />
+
+    <Button
+        android:id="@+id/buttonPelunasan"
+        android:layout_width="129dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center_horizontal|top"
+        android:text="Pelunasan dan Pengambilan"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/namaLaundry" />
+
+    <ImageView
+        android:id="@+id/iconPelunasan"
+        android:layout_width="120dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="32dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPelunasan"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPelunasan"
+        app:layout_constraintStart_toStartOf="@+id/buttonPelunasan"
+        app:srcCompat="@drawable/pelunasan" />
+
+    <view
+        android:id="@+id/view"
+        class="androidx.appcompat.widget.ActionMenuView"
+        android:layout_width="330dp"
+        android:layout_height="202dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="48dp"
+        android:background="@color/softpink"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/tanggal"
+        android:layout_width="168dp"
+        android:layout_height="45dp"
+        android:elevation="8dp"
+        android:src="@drawable/tanggal"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/timestamp_TextView"
+        android:layout_width="110dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:elevation="12dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tanggal"
+        app:layout_constraintStart_toStartOf="@+id/tanggal"
+        app:layout_constraintTop_toTopOf="@+id/tanggal" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="148dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Pemesanan"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <Button
+        android:id="@+id/buttonPesanmasuk"
+        android:layout_width="279dp"
+        android:layout_height="49dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="Pesanan Masuk"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPesankeluar"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view" />
+
+    <Button
+        android:id="@+id/buttonPesankeluar"
+        android:layout_width="279dp"
+        android:layout_height="49dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="Pesanan Keluar"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/abuabu_pudar"
+        app:itemIconTint="@drawable/color_state"
+        app:itemTextColor="@drawable/color_state"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom_nav" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

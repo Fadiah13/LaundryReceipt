@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".Konsumenbaru">
+
+    <TextView
+        android:id="@+id/nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="150dp"
+        android:text="Nama"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins"/>
+
+    <EditText
+        android:id="@+id/textnamaKonsumen"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_text"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="@font/poppins"
+        android:hint="Masukkan Nama"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#8F8B8B" />
+
+    <TextView
+        android:id="@+id/noWa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Handphone"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="#000000"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/texthpKonsumen"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_text"
+        android:hint="Masukkan No Handphone"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        android:padding="10dp"
+        android:inputType="phone"
+        android:textColor="@color/black"
+        android:textColorHint="#8F8B8B"
+        android:fontFamily="@font/poppins" />
+
+    <TextView
+        android:id="@+id/alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alamat"
+        android:fontFamily="@font/poppins"
+        android:textColor="#000000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="350dp"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/textalamatKonsumen"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:inputType="textPersonName"
+        android:background="@drawable/input_text"
+        android:hint="Masukkan Alamat"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="@font/poppins"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#8F8B8B"/>
+
+    <Button
+        android:id="@+id/simpandata"
+        android:layout_width="299dp"
+        android:layout_height="52dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:text="Simpan Data"
+        android:layout_marginLeft="55dp"
+        android:fontFamily="@font/poppins"
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:textSize="24sp"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LaundryReceipt"
+        tools:targetApi="31">
+        <activity
+            android:name=".PemesananKeluar"
+            android:exported="false" />
+        <activity
+            android:name=".DpPayment"
+            android:exported="false" />
+        <activity
+            android:name=".IsiLayanan"
+            android:exported="false" />
+        <activity
+            android:name=".Pengambilan_blmlunas"
+            android:exported="false" />
+        <activity
+            android:name=".Pengambilan"
+            android:exported="true" />
+        <activity
+            android:name=".Saat_ambil"
+            android:exported="false" />
+        <activity
+            android:name=".Nota_tunai"
+            android:exported="true" />
+        <activity
+            android:name=".Nota_transfer"
+            android:exported="false" />
+        <activity
+            android:name=".Pembayaran"
+            android:exported="false" />
+        <activity
+            android:name=".Pemesananbaru"
+            android:exported="true" />
+        <activity
+            android:name=".DetailLayanan"
+            android:exported="true" />
+        <activity
+            android:name=".Konsumenbaru"
+            android:exported="true" />
+        <activity
+            android:name=".Settings"
+            android:exported="true" />
+        <activity
+            android:name=".Pemesanan"
+            android:exported="true" />
+        <activity
+            android:name=".Statistik"
+            android:exported="true" />
+        <activity
+            android:name=".PaketLayanan"
+            android:exported="true" />
+        <activity
+            android:name=".Utama"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Register"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Login"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

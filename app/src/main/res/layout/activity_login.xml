@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/poppins"
+        android:text="Username"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/textUser"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:hint="Masukkan username"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="215dp"
+        android:layout_marginLeft="20dp"
+        android:padding="10dp"
+        android:background="@drawable/input_text"
+        android:fontFamily="@font/poppins"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="#8F8B8B"/>
+
+    <TextView
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_marginTop="285dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins"/>
+
+    <EditText
+        android:id="@+id/textPassword"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_text"
+        android:ems="10"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Masukkan password"
+        android:layout_marginRight="15dp"
+        android:fontFamily="@font/poppins"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:textColorHint="#8F8B8B"/>
+
+    <TextView
+        android:id="@+id/buttonLupaPassword"
+        android:layout_width="150dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="375dp"
+        android:fontFamily="@font/poppins"
+        android:layout_marginRight="15dp"
+        android:text="Lupa Password?"
+        android:layout_marginLeft="220dp"
+        android:textColor="#001FC5" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="299dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="550dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins"
+        android:layout_marginLeft="55dp"
+        android:layout_marginBottom="2dp"
+        android:layout_centerHorizontal="true"
+        android:text="Masuk"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/textRegist"
+        android:layout_width="161dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="610dp"
+        android:layout_marginLeft="73dp"
+        android:fontFamily="@font/poppins"
+        android:text="Belum punya akun?"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/tombolRegist"
+        android:layout_width="105dp"
+        android:layout_height="27dp"
+        android:fontFamily="@font/poppins"
+        android:layout_marginLeft="232dp"
+        android:layout_marginTop="610dp"
+        android:text="Registrasi"
+        android:layout_marginBottom="5dp"
+        android:textColor="#001FC5"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+</RelativeLayout>

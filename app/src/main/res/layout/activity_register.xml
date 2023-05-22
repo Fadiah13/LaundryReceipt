@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".Register">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/namaLaundry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Nama Laundry"
+        android:textColor="@color/black"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/textnmLaundry"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_text"
+        android:fontFamily="@font/poppins"
+        android:hint="Masukkan nama laundry"
+        android:inputType="textPersonName"
+        android:layout_marginTop="185dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#8F8B8B" />
+
+    <TextView
+        android:id="@+id/Norek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="No Rekening"
+        android:textColor="@color/black"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/textNorek"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_text"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="Masukkan No Rekening"
+        android:layout_marginRight="15dp"
+        android:inputType="number"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="282dp"
+        android:layout_marginLeft="20dp"
+        android:textColorHint="#8F8B8B"/>
+
+    <TextView
+        android:id="@+id/Handphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="No.Hp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="345dp"
+        android:layout_marginLeft="20dp" />
+
+    <EditText
+        android:id="@+id/textNoHp"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_text"
+        android:layout_marginRight="15dp"
+        android:ems="12"
+        android:fontFamily="@font/poppins"
+        android:hint="Masukkan no hp"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="20dp"
+        android:textColorHint="#8F8B8B"/>
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Username"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="448dp"
+        android:layout_marginLeft="20dp"/>
+
+    <EditText
+        android:id="@+id/textUser"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_text"
+        android:fontFamily="@font/poppins"
+        android:hint="Masukkan username"
+        android:inputType="textPersonName"
+        android:layout_marginRight="15dp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#8F8B8B"
+        android:layout_marginTop="485dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="550dp"
+        android:layout_marginLeft="20dp"/>
+
+    <EditText
+        android:id="@+id/textPassword"
+        android:layout_width="358dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_text"
+        android:ems="11"
+        android:fontFamily="@font/poppins"
+        android:hint="Masukkan password"
+        android:inputType="textPassword"
+        android:layout_marginRight="15dp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#8F8B8B"
+        android:layout_marginTop="585dp"
+        android:layout_marginLeft="20dp"/>
+
+    <Button
+        android:id="@+id/buttonRegistrasi"
+        android:layout_width="299dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Registrasi"
+        android:textSize="24sp"
+        android:layout_marginTop="650dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="2dp"/>
+</RelativeLayout>
+

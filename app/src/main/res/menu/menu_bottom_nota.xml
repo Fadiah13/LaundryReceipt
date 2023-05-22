@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottomberanda"
+        android:title="Beranda"
+        android:fontFamily="@font/poppins_medium"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/bottomcetaknota"
+        android:title="Cetak Nota"
+        android:fontFamily="@font/poppins_medium"
+        android:icon="@drawable/ic_cetaknota"/>
+
+    <item
+        android:id="@+id/bottomkirimnota"
+        android:title="Kirim Nota"
+        android:fontFamily="@font/poppins_medium"
+        android:icon="@drawable/icon_whatsapp"/>
+</menu>

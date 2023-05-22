@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context=".Pengambilan">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cari Orderan"
+        android:textSize="20dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"/>
+
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/search"
+        android:iconifiedByDefault="false"
+        android:queryHint=" No Hp/ Nama/No.Pesanan"
+        android:searchIcon="@drawable/ic_search" />
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="330dp"
+        android:layout_marginTop="30dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lunas"
+            android:layout_width="383dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="#FFFFFFFF"
+            tools:listitem="@layout/list_pengambilanlunas" />
+    </ScrollView>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="330dp"
+        android:layout_marginTop="30dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/blmlunas"
+            android:layout_width="383dp"
+            android:layout_height="match_parent"
+            android:background="#FFFFFFFF"
+            tools:listitem="@layout/list_pengambilanblmlunas" />
+    </ScrollView>
+</LinearLayout>
