@@ -7,15 +7,15 @@
     tools:context=".Settings">
 
     <TextView
-            android:id="@+id/createText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Settings"
-            android:textColor="@color/black"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp" />
+        android:id="@+id/createText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Settings"
+        android:textColor="@color/black"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp" />
 
     <View
         android:id="@+id/viewgaris"
@@ -43,6 +43,7 @@
             android:src="@drawable/ic_person" />
 
         <TextView
+            android:id="@+id/profil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -67,6 +68,7 @@
             android:src="@drawable/ic_language"/>
 
         <TextView
+            android:id="@+id/bahasa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bahasa Aplikasi"
@@ -91,6 +93,7 @@
             android:src="@drawable/baseline_help_24"/>
 
         <TextView
+            android:id="@+id/help"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Help"
@@ -115,6 +118,7 @@
             android:src="@drawable/baseline_logout_24"/>
 
         <TextView
+            android:id="@+id/logOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Logout"

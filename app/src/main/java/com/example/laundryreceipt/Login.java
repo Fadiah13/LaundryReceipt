@@ -1,12 +1,15 @@
 package com.example.laundryreceipt;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import android.widget.Button;
@@ -20,9 +23,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 public class Login extends AppCompatActivity {
-
-    EditText loginUsername, loginPassword;
+    AlertDialog.Builder builder;
+    EditText loginUsername, loginPassword, passbaru;
     Button loginButton;
+    TextView lupapaassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +34,39 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         TextView textView = findViewById(R.id.tombolRegist);
+        lupapaassword = findViewById(R.id.buttonLupaPassword);
         loginUsername = findViewById(R.id.textUser);
         loginPassword = findViewById(R.id.textPassword);
         loginButton = findViewById(R.id.buttonLogin);
 
+        lupapaassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                builder = new AlertDialog.Builder(Login.this);
+                builder.setMessage("Lupa Password");
+                // Membuat layout container untuk EditText
+                LinearLayout layout = new LinearLayout(Login.this);
+                layout.setOrientation(LinearLayout.VERTICAL);
+
+// Membuat EditText
+                final EditText editText = new EditText(Login.this);
+                editText.setHint("Masukkan password");
+                layout.addView(editText);
+
+                builder.setView(layout);
+                builder.setPositiveButton("SIMPAN", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int which) {
+                                String passbaru = editText.getText().toString(); //
+                                Intent intentRegister = new Intent(Login.this, Login.class);
+                                startActivity(intentRegister);
+                                finish();
+                            }
+                        })
+                        .show();
+
+            }
+        });
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

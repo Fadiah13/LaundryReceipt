@@ -26,6 +26,10 @@ public class Utama extends AppCompatActivity {
 
     private DatabaseReference utamaRef;
 
+    public Utama(){
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

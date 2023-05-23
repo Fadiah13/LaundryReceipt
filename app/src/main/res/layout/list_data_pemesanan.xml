@@ -32,7 +32,7 @@
 
     <LinearLayout
         android:layout_width="185dp"
-        android:layout_height="wrap_content"
+        android:layout_height="137dp"
         android:layout_margin="20dp"
         android:background="#FFFFFFFF"
         android:orientation="vertical"
@@ -45,37 +45,37 @@
             android:paddingLeft="5dp"
             android:text="No Pesanan"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingLeft="5dp"
             android:text="Nama"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/noHp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingLeft="5dp"
             android:text="No HP"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/estimasiselesai"
             android:layout_width="171dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="13dp"
             android:paddingLeft="5dp"
             android:text="Estimasi Selesai"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="179dp"

@@ -1,5 +1,6 @@
 package com.example.laundryreceipt;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,15 +10,20 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Pemesanan extends AppCompatActivity {
 
     private DatabaseReference pemesananmasukRef;
     private RecyclerView recyclerView;
-    private AdapterPemesananbaru adapter;
+    private AdapterPemesananMasuk adapter;
 
     public Pemesanan(){
 
@@ -30,17 +36,47 @@ public class Pemesanan extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rv_pemesananmasuk);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AdapterPemesananbaru(this);
-        adapter.setPemesananbaruList(new ArrayList<>()); // pass empty ArrayList using setEventsList()
+        adapter = new AdapterPemesananMasuk(this);
+        adapter.setPemesananmasukList(new ArrayList<>()); // pass empty ArrayList using setEventsList()
         recyclerView.setAdapter(adapter);
 
-        adapter.setOnItemClickListener(new AdapterPemesananbaru.OnItemClickListener() {
+        adapter.setOnItemClickListener(new AdapterPemesananMasuk.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+                HelperClassPemesananMasuk helperClassPemesananMasuk = adapter.getPemesananmasukList().get(position);
+                // Pass the selected data to the Pengambilan activity
+                Intent intent = new Intent(Pemesanan.this, Pengambilan.class);
+                intent.putExtra("helperclassPemesananMasuk", helperClassPemesananMasuk);
+                startActivity(intent);
 
-                startActivity(new Intent(Pemesanan.this, PaketLayanan.class));
+                // Remove the selected item from the pemesananmasukList
+                adapter.getPemesananmasukList().remove(position);
+                adapter.notifyItemRemoved(position);
             }
         });
+
+        pemesananmasukRef = FirebaseDatabase.getInstance().getReference().child("datapemesanan");
+        pemesananmasukRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataaaaaaaSnapshot) {
+                List<HelperClassPemesananMasuk> pemesananmasukList = new ArrayList<>();
+                for (DataSnapshot snapshot : dataaaaaaaSnapshot.getChildren()) {
+                    String nopesanan = snapshot.child("kodeResi").getValue(String.class);
+                    String nama = snapshot.child("nama").getValue(String.class);
+                    String nohp = snapshot.child("noTelp").getValue(String.class);
+                    String estimasi = snapshot.child("Paketlayanan").child("detailLayanan").child("hari").getValue(String.class);
+                    HelperClassPemesananMasuk pemesananmasuk = new HelperClassPemesananMasuk(nopesanan, nama, nohp,estimasi);
+                    pemesananmasukList.add(pemesananmasuk);
+                }
+                adapter.setPemesananmasukList(pemesananmasukList);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle the error
+            }
+        });
+
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationView.setSelectedItemId(R.id.bottomPemesanan);
