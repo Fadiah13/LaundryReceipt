@@ -24,8 +24,10 @@
 
     <TextView
         android:id="@+id/textnorek"
-        android:layout_width="244dp"
+        android:layout_width="220dp"
         android:layout_height="34dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/poppins"
         android:text=" "
         android:textColor="@color/black"
@@ -39,8 +41,10 @@
 
     <TextView
         android:id="@+id/textnamabank"
-        android:layout_width="303dp"
+        android:layout_width="260dp"
         android:layout_height="37dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/poppins"
         android:text=" "
         android:textColor="@color/black"

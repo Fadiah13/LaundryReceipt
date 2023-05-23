@@ -13,8 +13,8 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.List;
 
-public class AdapterNotaTunai extends RecyclerView.Adapter<AdapterNotaTunai.ViewHolder> {
-    private List<HelperClassNotaTunai> notaTunaiList;
+public class AdapterNota extends RecyclerView.Adapter<AdapterNota.ViewHolder> {
+    private List<HelperClassNota> notaList;
     private DatabaseReference databaseReference;
     private Context context;
     private OnItemClickListener listener;
@@ -29,11 +29,11 @@ public class AdapterNotaTunai extends RecyclerView.Adapter<AdapterNotaTunai.View
         this.totalBayar = totalBayar;
     }
 
-    public AdapterNotaTunai(Context context) {
+    public AdapterNota(Context context) {
         this.context = context;
     }
 
-    public void setOnItemClickListener(AdapterNotaTunai.OnItemClickListener listener) {
+    public void setOnItemClickListener(AdapterNota.OnItemClickListener listener) {
         this.listener = listener;
     }
 
@@ -41,28 +41,28 @@ public class AdapterNotaTunai extends RecyclerView.Adapter<AdapterNotaTunai.View
         void onItemClick(View view, int position);
     }
 
-    public List<HelperClassNotaTunai> getNotaTunaiList() {
-        return notaTunaiList;
+    public List<HelperClassNota> getNotaList() {
+        return notaList;
     }
 
-    public void setNotaTunaiList(List<HelperClassNotaTunai> notaTunaiList) {
-        this.notaTunaiList = notaTunaiList;
+    public void setNotaList(List<HelperClassNota> notaList) {
+        this.notaList = notaList;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public AdapterNotaTunai.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterNota.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_notatunai, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterNotaTunai.ViewHolder holder, int position) {
-        HelperClassNotaTunai notaTunai = notaTunaiList.get(position);
+    public void onBindViewHolder(@NonNull AdapterNota.ViewHolder holder, int position) {
+        HelperClassNota nota = notaList.get(position);
 
-        holder.namalayanan.setText(notaTunai.getNamalayanan());
-        holder.total.setText(notaTunai.getTotal());
+        holder.namalayanan.setText(nota.getNamalayanan());
+        holder.total.setText(nota.getTotal());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +81,7 @@ public class AdapterNotaTunai extends RecyclerView.Adapter<AdapterNotaTunai.View
 
     @Override
     public int getItemCount() {
-        return notaTunaiList != null ? notaTunaiList.size() : 0;
+        return notaList != null ? notaList.size() : 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

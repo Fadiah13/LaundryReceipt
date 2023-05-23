@@ -1,14 +1,14 @@
 package com.example.laundryreceipt;
 
-public class HelperClassNotaTunai {
+public class HelperClassNota {
 
     private String namalayanan, total;
 
-    public HelperClassNotaTunai(){
+    public HelperClassNota(){
 
     }
 
-    public HelperClassNotaTunai(String namalayanan, String total) {
+    public HelperClassNota(String namalayanan, String total) {
         this.namalayanan = namalayanan;
         this.total = total;
     }

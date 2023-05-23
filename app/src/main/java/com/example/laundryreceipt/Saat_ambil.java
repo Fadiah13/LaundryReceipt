@@ -46,14 +46,14 @@ public class Saat_ambil extends AppCompatActivity {
                 saatAmbilRef = FirebaseDatabase.getInstance().getReference("datapemesanan");
                 saatAmbilRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dtSnapshot) {
-                        for (DataSnapshot snapshot : dtSnapshot.getChildren()) {
+                    public void onDataChange(@NonNull DataSnapshot dataaSnapshot) {
+                        for (DataSnapshot snapshot : dataaSnapshot.getChildren()) {
                             String koderesi = snapshot.child("kodeResi").getValue(String.class);
                             String nama = snapshot.child("nama").getValue(String.class);
                             String namalayanan = snapshot.child("Paketlayanan").child("namalayanan").getValue(String.class);
                             String kuantitas = snapshot.child("Paketlayanan").child("detailLayanan").child("kuantitas").getValue(String.class);
                             String estimasi = snapshot.child("Paketlayanan").child("detailLayanan").child("hari").getValue(String.class);
-                            String totalbayar = snapshot.child("Totalbayar").getValue(String.class);
+                            String totalbayar = snapshot.child("pembayaran").child("Totalbayar").getValue(String.class);
 
                             //mengirim ke nohp yang dituju
                             String nohp = snapshot.child("noTelp").getValue(String.class);

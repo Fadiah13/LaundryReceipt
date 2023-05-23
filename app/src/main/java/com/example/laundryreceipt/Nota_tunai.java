@@ -28,11 +28,16 @@ public class Nota_tunai extends AppCompatActivity {
     Button halamanutama,Hitung;
     ImageButton cetaknotatunai, kirimnotatunai;
     private RecyclerView recyclerView;
-    private DatabaseReference notatunaiRef, notawaRef;
-    private AdapterNotaTunai adapter;
+    private DatabaseReference notatunaiRef;
+    private DatabaseReference notawaRef;
+    private AdapterNota adapter;
     private int userId = 1;
     EditText Bayar;
     TextView Kembalian, Nama, Notelp;
+
+    public Nota_tunai(){
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,22 +60,22 @@ public class Nota_tunai extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rv_notatunai);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AdapterNotaTunai(this);
-        adapter.setNotaTunaiList(new ArrayList<>()); // pass empty ArrayList using setEventsList()
+        adapter = new AdapterNota(this);
+        adapter.setNotaList(new ArrayList<>()); // pass empty ArrayList using setEventsList()
         recyclerView.setAdapter(adapter);
 
         notatunaiRef = FirebaseDatabase.getInstance().getReference("datapemesanan");
         notatunaiRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<HelperClassNotaTunai> notaTunaiList = new ArrayList<>();
+                List<HelperClassNota> notaList = new ArrayList<>();
                 double Total = 0;
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     String namalayanan = snapshot.child("Paketlayanan").child("namalayanan").getValue(String.class);
-                    String total = snapshot.child("Totalbayar").getValue(String.class);
+                    String total = snapshot.child("pembayaran").child("Totalbayar").getValue(String.class);
                     double totalValue = Double.parseDouble(total);
-                    HelperClassNotaTunai notaTunai = new HelperClassNotaTunai(namalayanan, total);
-                    notaTunaiList.add(notaTunai);
+                    HelperClassNota notaTunai = new HelperClassNota(namalayanan, total);
+                    notaList.add(notaTunai);
                     Total += totalValue;
                     String nama = snapshot.child("nama").getValue(String.class);
                     String notelp = snapshot.child("noTelp").getValue(String.class);
@@ -79,7 +84,7 @@ public class Nota_tunai extends AppCompatActivity {
                     Notelp.setText(notelp);
 
                 }
-                adapter.setNotaTunaiList(notaTunaiList);
+                adapter.setNotaList(notaList);
                 Bayar.setEnabled(true); // Enable the EditText for input
                 adapter.setTotalBayar(String.valueOf(Total));
             }
@@ -116,19 +121,19 @@ public class Nota_tunai extends AppCompatActivity {
                             String namalayanan = snapshot.child("Paketlayanan").child("namalayanan").getValue(String.class);
                             String kuantitas = snapshot.child("Paketlayanan").child("detailLayanan").child("kuantitas").getValue(String.class);
                             String estimasi = snapshot.child("Paketlayanan").child("detailLayanan").child("hari").getValue(String.class);
-                            String totalbayar = snapshot.child("Totalbayar").getValue(String.class);
+                            String totalbayar = snapshot.child("pembayaran").child("Totalbayar").getValue(String.class);
 
                             //mengirim ke nohp yang dituju
                             String nohp = snapshot.child("noTelp").getValue(String.class);
                             // Create the message string
                             StringBuilder message = new StringBuilder();
                             message.append("Nota LAUNDRYRECEIPT:\n");
-                            message.append("Nomor Pemesanan: ").append(koderesi).append("\n");
-                            message.append("Pelanggan yth: ").append(nama).append("\n");
-                            message.append("Paket Layanan: ").append(namalayanan).append("\n");
-                            message.append("Kuantitas: ").append(kuantitas).append("Kg").append("\n");
+                            message.append("Nomor Pemesanan : ").append(koderesi).append("\n");
+                            message.append("Pelanggan yth : ").append(nama).append("\n");
+                            message.append("Paket Layanan : ").append(namalayanan).append("\n");
+                            message.append("Kuantitas : ").append(kuantitas).append("Kg").append("\n");
                             message.append("Estimasi selesai: ").append(estimasi).append("Hari").append("\n");
-                            message.append("Total Tagihan: ").append("Rp.").append(totalbayar).append("\n");
+                            message.append("Total Tagihan : ").append("Rp.").append(totalbayar).append("\n");
                             message.append("Tunggu informasi selanjutnya");
 
                             Uri uri = Uri.parse("https://wa.me/" + nohp + "?text=" + Uri.encode(message.toString()));

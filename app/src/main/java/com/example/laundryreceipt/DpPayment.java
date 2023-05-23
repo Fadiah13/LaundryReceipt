@@ -28,8 +28,9 @@ public class DpPayment extends AppCompatActivity {
     Button utamaa,Hitung;
     ImageButton dpcetak, dpkirim;
     private RecyclerView recyclerViewdp;
-    private DatabaseReference dpRef, dpkirimwaRef;
-    private AdapterNotaTunai adapter;
+    private DatabaseReference dpRef;
+    private DatabaseReference dpkirimwaRef;
+    private AdapterNota adapter;
     private int userId = 1;
     EditText Bayar;
     TextView Sisa, Nama, Notelp;
@@ -56,22 +57,22 @@ public class DpPayment extends AppCompatActivity {
 
         recyclerViewdp = findViewById(R.id.rv_dp);
         recyclerViewdp.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AdapterNotaTunai(this);
-        adapter.setNotaTunaiList(new ArrayList<>()); // pass empty ArrayList using setEventsList()
+        adapter = new AdapterNota(this);
+        adapter.setNotaList(new ArrayList<>()); // pass empty ArrayList using setEventsList()
         recyclerViewdp.setAdapter(adapter);
 
         dpRef = FirebaseDatabase.getInstance().getReference("datapemesanan");
         dpRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<HelperClassNotaTunai> notaTunaiList = new ArrayList<>();
+            public void onDataChange(@NonNull DataSnapshot dataaaaaSnapshot) {
+                List<HelperClassNota> notaList = new ArrayList<>();
                 double Total = 0;
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                for (DataSnapshot snapshot : dataaaaaSnapshot.getChildren()) {
                     String namalayanan = snapshot.child("Paketlayanan").child("namalayanan").getValue(String.class);
-                    String total = snapshot.child("Totalbayar").getValue(String.class);
+                    String total = snapshot.child("pembayaran").child("Totalbayar").getValue(String.class);
                     double totalValue = Double.parseDouble(total);
-                    HelperClassNotaTunai notaTunai = new HelperClassNotaTunai(namalayanan, total);
-                    notaTunaiList.add(notaTunai);
+                    HelperClassNota nota = new HelperClassNota(namalayanan, total);
+                    notaList.add(nota);
                     Total += totalValue;
                     String nama = snapshot.child("nama").getValue(String.class);
                     String notelp = snapshot.child("noTelp").getValue(String.class);
@@ -80,7 +81,7 @@ public class DpPayment extends AppCompatActivity {
                     Notelp.setText(notelp);
 
                 }
-                adapter.setNotaTunaiList(notaTunaiList);
+                adapter.setNotaList(notaList);
                 Bayar.setEnabled(true); // Enable the EditText for input
                 adapter.setTotalBayar(String.valueOf(Total));
             }
@@ -107,14 +108,14 @@ public class DpPayment extends AppCompatActivity {
                 dpkirimwaRef = FirebaseDatabase.getInstance().getReference("datapemesanan");
                 dpkirimwaRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dtSnapshot) {
-                        for (DataSnapshot snapshot : dtSnapshot.getChildren()) {
+                    public void onDataChange(@NonNull DataSnapshot dataaaaaaSnapshot) {
+                        for (DataSnapshot snapshot : dataaaaaaSnapshot.getChildren()) {
                             String koderesi = snapshot.child("kodeResi").getValue(String.class);
                             String nama = snapshot.child("nama").getValue(String.class);
                             String namalayanan = snapshot.child("Paketlayanan").child("namalayanan").getValue(String.class);
                             String kuantitas = snapshot.child("Paketlayanan").child("detailLayanan").child("kuantitas").getValue(String.class);
                             String estimasi = snapshot.child("Paketlayanan").child("detailLayanan").child("hari").getValue(String.class);
-                            String totalbayar = snapshot.child("Totalbayar").getValue(String.class);
+                            String totalbayar = snapshot.child("pembayaran").child("Totalbayar").getValue(String.class);
 
                             //mengirim ke nohp yang dituju
                             String nohp = snapshot.child("noTelp").getValue(String.class);

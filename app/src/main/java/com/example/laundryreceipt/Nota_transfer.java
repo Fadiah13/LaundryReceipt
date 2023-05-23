@@ -26,8 +26,10 @@ import java.util.List;
 public class Nota_transfer extends AppCompatActivity {
     Button utama;
     ImageButton cetaknotaTransfer, kirimnotawaTransfer;
-    private DatabaseReference notatransferRef, adminAtmref, notawatransferRef;
-    private AdapterNotaTunai adapter;
+    private DatabaseReference notatransferRef;
+    private  DatabaseReference adminAtmref;
+    private DatabaseReference notawatransferRef;
+    private AdapterNota adapter;
     private RecyclerView recyclerView;
     TextView Nama, Norek;
 
@@ -52,27 +54,27 @@ public class Nota_transfer extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rv_notatransfer);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new AdapterNotaTunai(this);
-        adapter.setNotaTunaiList(new ArrayList<>()); // pass empty ArrayList using setEventsList()
+        adapter = new AdapterNota(this);
+        adapter.setNotaList(new ArrayList<>()); // pass empty ArrayList using setEventsList()
         recyclerView.setAdapter(adapter);
 
         notatransferRef = FirebaseDatabase.getInstance().getReference("datapemesanan");
         notatransferRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<HelperClassNotaTunai> notaTunaiList = new ArrayList<>();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+            public void onDataChange(@NonNull DataSnapshot dataaaaSnapshot) {
+                List<HelperClassNota> notaList = new ArrayList<>();
+                for (DataSnapshot snapshot : dataaaaSnapshot.getChildren()) {
                     String namalayanan = snapshot.child("Paketlayanan").child("namalayanan").getValue(String.class);
-                    String total = snapshot.child("Totalbayar").getValue(String.class);
-                    HelperClassNotaTunai notaTunai = new HelperClassNotaTunai(namalayanan, total);
-                    notaTunaiList.add(notaTunai);
+                    String total = snapshot.child("pembayaran").child("Totalbayar").getValue(String.class);
+                    HelperClassNota nota = new HelperClassNota(namalayanan, total);
+                    notaList.add(nota);
                     String nama = snapshot.child("nama").getValue(String.class);
                     String norek = snapshot.child("norek").getValue(String.class);
                     // Display the retrieved data in TextViews
                     Nama.setText(nama);
                     Norek.setText(norek);
                 }
-                adapter.setNotaTunaiList(notaTunaiList);
+                adapter.setNotaList(notaList);
             }
 
             @Override
@@ -84,8 +86,8 @@ public class Nota_transfer extends AppCompatActivity {
         adminAtmref = FirebaseDatabase.getInstance().getReference("users");
         adminAtmref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+            public void onDataChange(@NonNull DataSnapshot dataaSnapshot) {
+                for (DataSnapshot snapshot : dataaSnapshot.getChildren()) {
                     String nama = snapshot.child("nama").getValue(String.class);
                     String norek = snapshot.child("norek").getValue(String.class);
                     // Display the retrieved data in TextViews
@@ -107,14 +109,14 @@ public class Nota_transfer extends AppCompatActivity {
                 notawatransferRef = FirebaseDatabase.getInstance().getReference("datapemesanan");
                 notawatransferRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dtSnapshot) {
-                        for (DataSnapshot snapshot : dtSnapshot.getChildren()) {
+                    public void onDataChange(@NonNull DataSnapshot dataaaSnapshot) {
+                        for (DataSnapshot snapshot : dataaaSnapshot.getChildren()) {
                             String koderesi = snapshot.child("kodeResi").getValue(String.class);
                             String nama = snapshot.child("nama").getValue(String.class);
                             String namalayanan = snapshot.child("Paketlayanan").child("namalayanan").getValue(String.class);
                             String kuantitas = snapshot.child("Paketlayanan").child("detailLayanan").child("kuantitas").getValue(String.class);
                             String estimasi = snapshot.child("Paketlayanan").child("detailLayanan").child("hari").getValue(String.class);
-                            String totalbayar = snapshot.child("Totalbayar").getValue(String.class);
+                            String totalbayar = snapshot.child("pembayaran").child("Totalbayar").getValue(String.class);
 
                             //mengirim ke nohp yang dituju
                             String nohp = snapshot.child("noTelp").getValue(String.class);

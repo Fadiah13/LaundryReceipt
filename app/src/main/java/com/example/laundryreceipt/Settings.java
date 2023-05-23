@@ -15,27 +15,24 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNav);
-        bottomNavigationView.setSelectedItemId(R.id.bottomHome);
+        bottomNavigationView.setSelectedItemId(R.id.bottomSettings);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.bottomHome:
                     startActivity(new Intent(Settings.this, Utama.class));
-                    finish();
-                    return true;
+                    break;
                 case R.id.bottomStatistik:
                     startActivity(new Intent(Settings.this, Statistik.class));
-                    finish();
-                    return true;
+                   break;
                 case R.id.bottomPemesanan:
                     startActivity(new Intent(Settings.this, Pemesanan.class));
-                    finish();
-                    return true;
+                    break;
                 case R.id.bottomSettings:
-                    return true;
+                    break;
 
             }
-            return false;
+            return true;
         });
     }
 }
